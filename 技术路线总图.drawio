@@ -1,0 +1,153 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0">
+  <diagram name="技术路线总图" id="meteorological-quantum-platform">
+    <mxGraphModel dx="1411" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="box1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="多源气象数据&lt;br&gt;（雷达、站点、&lt;br&gt;历史降水）" vertex="1">
+          <mxGeometry height="70" width="110" x="175" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="数据质控&lt;br&gt;与时空配准" vertex="1">
+          <mxGeometry height="70" width="90" x="305" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="非负约束 QP&lt;br&gt;降水场与偏差估计&lt;br&gt;（观测融合 + 初场优化）" vertex="1">
+          <mxGeometry height="70" width="130" x="415" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="候选场集合&lt;br&gt;主方案 / 保守方案&lt;br&gt;无偏差 / 站点创新" vertex="1">
+          <mxGeometry height="70" width="110" x="565" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="区域候选组合 QUBO&lt;br&gt;拟合与邻域兼容&lt;br&gt;选择约束" vertex="1">
+          <mxGeometry height="70" width="120" x="695" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="连续修正&lt;br&gt;历史降水场" vertex="1">
+          <mxGeometry height="70" width="90" x="835" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="混合量子-经典&lt;br&gt;短临预测&lt;br&gt;（Earthformer +&lt;br&gt;低维量子特征层）" vertex="1">
+          <mxGeometry height="70" width="120" x="945" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="box8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="未来 6-120 分钟&lt;br&gt;降水产品与&lt;br&gt;业务应用" vertex="1">
+          <mxGeometry height="70" width="110" x="1085" y="87" as="geometry" />
+        </mxCell>
+        <mxCell id="subbox2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;量子参与&lt;br&gt;（低维量子特征层）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="42" width="92.4" x="1030" y="197" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="box1" target="box2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="box2" target="box3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="box3" target="box4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="box4" target="box5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="box5" target="box6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="box6" target="box7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="box7" target="box8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="platform_container" parent="1" style="swimlane;whiteSpace=wrap;html=1;dashed=1;fillColor=none;horizontal=1;collapsible=0;" value="多技术路线气象量子计算云平台（业务平台接口层）" vertex="1">
+          <mxGeometry height="150" width="1020" x="175" y="307" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="数据管理&lt;br&gt;（数据接入 / 存储 / 版本）" vertex="1">
+          <mxGeometry height="70" width="140" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="任务调度&lt;br&gt;（资源分配 / 流程控制）" vertex="1">
+          <mxGeometry height="70" width="140" x="180" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="算法调用&lt;br&gt;（经典 / 量子 / 混合）" vertex="1">
+          <mxGeometry height="70" width="140" x="340" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="解码校验&lt;br&gt;（结果验证 / 误差分析）" vertex="1">
+          <mxGeometry height="70" width="140" x="500" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="产品输出&lt;br&gt;（可视化 / 业务接口）" vertex="1">
+          <mxGeometry height="70" width="140" x="660" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m6" parent="platform_container" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="日志与版本记录&lt;br&gt;（过程追溯 / 模型管理）" vertex="1">
+          <mxGeometry height="70" width="140" x="820" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-2" edge="1" parent="1" source="res1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="platform_container" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="res1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="经典 CPU/GPU 计算资源&lt;br&gt;QP、预测主干、解码融合&lt;br&gt;（承担大部分计算任务）" vertex="1">
+          <mxGeometry height="80" width="220" x="320" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="res2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="量子 / 伊辛求解资源&lt;br&gt;QUBO 离散组合、低维量子特征&lt;br&gt;（超导、离子阱、相干光伊辛等后端适配）" vertex="1">
+          <mxGeometry height="80" width="260" x="735" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="eb2" edge="1" parent="1" source="res2" style="exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="865" y="458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" value="图* 技术路线总图" vertex="1">
+          <mxGeometry height="30" width="150" x="615" y="617" as="geometry" />
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-5" edge="1" parent="1" source="bQX_pf_jrEnmYu2kPO6e-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" target="box5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-4" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;连续反馈扩展：上一修正场 → 下一次 QP&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="229" x="640.5" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-6" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="230" y="275" as="sourcePoint" />
+            <mxPoint x="1139" y="273" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1145" y="273" as="sourcePoint" />
+            <mxPoint x="1145" y="164" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-8" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="236" y="275" as="sourcePoint" />
+            <mxPoint x="1145" y="273" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1006.5" y="273" as="sourcePoint" />
+            <mxPoint x="1006.5" y="166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-10" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1006" y="218" as="sourcePoint" />
+            <mxPoint x="1030" y="218" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481.5" y="276" as="sourcePoint" />
+            <mxPoint x="481.5" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 1;fillColor=none;" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;量子参与&lt;br&gt;（QUBO 组合优化）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="42" width="92.4" x="505" y="193" as="geometry" />
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-13" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="bQX_pf_jrEnmYu2kPO6e-12" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="214" as="sourcePoint" />
+            <mxPoint x="533" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bQX_pf_jrEnmYu2kPO6e-15" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="231" y="274" as="sourcePoint" />
+            <mxPoint x="231" y="163" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
